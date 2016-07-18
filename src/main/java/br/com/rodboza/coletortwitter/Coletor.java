@@ -16,6 +16,28 @@ import twitter4j.conf.*;
  * @author rodboza
  */
 public class Coletor {
+    
+    public ResultFindHashTag FindHashTag (String hashTag){
+        ResultFindHashTag result = new ResultFindHashTag();
+        
+        Twitter twitter = GetTwitterInstance();
+        try {
+            Query query = new Query(hashTag);
+            QueryResult result = twitter.search(query);
+            for (Status s : result.getTweets()) {
+                //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+                twitter4j.User u =  s.getUser();
+                result.NewPost(s.getId(), s.getText(),s.getLang(),u.getId(), u.getName(),u.getFollowersCount());
+            }
+
+            return result;
+        } catch (TwitterException te) {
+            te.printStackTrace();
+            System.out.println("Failed to search tweets: " + te.getMessage());
+            System.exit(-1);
+        }
+        return null;
+    }
 
     public ArrayList<Post> GetPosts(String hash) {
 
