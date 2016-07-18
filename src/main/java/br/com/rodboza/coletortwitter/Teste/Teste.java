@@ -19,11 +19,13 @@ public class Teste {
         
         Coletor c = new Coletor();
         
-        ArrayList<Post> p = c.GetPosts("#rio2016");
+        ResultFindHashTag result = c.GetPosts("#rio2016");
                 
         
         System.out.print(" qtd de posts:");
-        System.out.println(p.size());
+        System.out.println(result.GetPosts().size());
+        System.out.print(" qtd de useers:");
+        System.out.println(result.GetUsers().size());
         
     }
 }
