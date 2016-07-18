@@ -19,7 +19,7 @@ public class Teste {
         
         Coletor c = new Coletor();
         
-        ResultFindHashTag result = c.GetPosts("#rio2016");
+        ResultFindHashTag result = c.FindHashTag("#rio2016");
                 
         
         System.out.print(" qtd de posts:");
