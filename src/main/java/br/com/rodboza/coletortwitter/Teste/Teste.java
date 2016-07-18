@@ -6,7 +6,7 @@
 package br.com.rodboza.coletortwitter.Teste;
 
 import br.com.rodboza.coletortwitter.*;
-import br.com.rodboza.coletortwitter.Model.Post;
+import br.com.rodboza.coletortwitter.Model.*;
 import java.util.ArrayList;
 
 /**
