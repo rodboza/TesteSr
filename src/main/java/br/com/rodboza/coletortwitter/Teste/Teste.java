@@ -24,8 +24,8 @@ public class Teste {
         
         System.out.print(" qtd de posts:");
         System.out.println(result.GetPosts().size());
-        System.out.print(" qtd de useers:");
+        System.out.print(" qtd de users:");
         System.out.println(result.GetUsers().size());
         
-    }
+    }   
 }

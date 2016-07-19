@@ -39,29 +39,7 @@ public class Coletor {
         return null;
     }
 
-    public ArrayList<Post> GetPosts(String hash) {
-
-        ArrayList<Post> posts = new ArrayList<>();
-
-        Twitter twitter = GetTwitterInstance();
-        try {
-            Query query = new Query(hash);
-            QueryResult result = twitter.search(query);
-            for (Status s : result.getTweets()) {
-                //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
-                twitter4j.User u =  s.getUser();
-                Post p = Factory.NewPost(s.getId(), s.getText(),s.getLang(),u.getId(), u.getName(),u.getFollowersCount());
-                posts.add(p);
-            }
-
-            return posts;
-        } catch (TwitterException te) {
-            te.printStackTrace();
-            System.out.println("Failed to search tweets: " + te.getMessage());
-            System.exit(-1);
-        }
-        return null;
-    }
+    
 
     private Twitter GetTwitterInstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
